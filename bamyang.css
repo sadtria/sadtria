@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li::before {
+  content: "•";
+  color: #007bff;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+#about ul {
+  margin-top: 10px;
+}
+
+#about ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#experience div, #education div {
+  margin-bottom: 20px;
+}
+
+#experience h3, #education h3 {
+  margin-bottom: 5px;
+}
+
+#experience p, #education p {
+  margin-bottom: 0;
+}
+
+#skills ul {
+  columns: 2;
+}
+
+#awards ul {
+  columns: 1;
+}
+
+.doodle {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #333; /* text color */
+  }
+  
+  .doodle::after {
+    content: "";
+    width: 100%;
+    height: 10px;
+    background-image: url(https://www.beyondcss.dev/underline.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @font-face {
+    font-family: 'Mogilite';
+    src: url('font/Mogilte.otf') format('truetype'); /* Ganti 'path/to/font/' dengan lokasi yang sesuai */
+  }
+  
+  @font-face {
+    font-family: 'Mercado';
+    src: url('font/Mercado.otf') format('truetype'); /* Ganti 'path/to/font/' dengan lokasi yang sesuai */
+  }
+  
+  @font-face {
+    font-family: 'LTSoul';
+    src: url('font/LTSoul-Regular.otf') format('truetype'); /* Ganti 'path/to/font/' dengan lokasi yang sesuai */
+  }
+  
+  .headline {
+    font-family: 'Mogilite', sans-serif;
+  }
+  
+  .peep {
+    font-family: 'Mercado', sans-serif;
+  }
+  
+  p{
+    font-family: 'LTSoul', sans-serif;
+  }
+  #about{
+    text-align: center;
+    margin: 80px;
+  }
