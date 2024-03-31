@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kampus Merdeka</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <!-- <nav class="p-5 bg-black flex md:items-center md:justify-between">
+        <div class="mr-2"> 
+            <span class="flex">
+                <img class="mr-2" src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-pendidikan.92aef756.webp" alt="">
+                <img src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-white.d216d864.webp" alt="">
+            </span>
+        </div>
+
+        <div>
+            <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-green-500 w-full left-0">
+                <li class="mx-4">
+                    <a href="#" class="font-sans text-white text-xl font-semibold "> Beranda </a>
+                </li>
+                
+                <li class="mx-4">
+                    <a href="#" class="font-sans text-white text-xl font-semibold "> Program </a>
+                </li> 
+                
+                <li class="mx-4">
+                    <a href="#" class="font-sans text-white text-xl font-semibold "> Butuh Bantuan? </a>
+                </li>
+
+                <div class="">
+                    <a class="bg-white rounded p-3 font-semibold ">
+                        Masuk Ke Akun
+                    </a>
+                </div>
+            </ul>
+        </div>
+
+    </nav> -->
+
+    <header>
+      <!-- <nav class="py-4 px-32 bg-black shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center px-8">
+          <span class="text-2xl cursor-pointer flex">
+            <img
+              class="mr-2"
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-pendidikan.92aef756.webp"
+              alt=""
+            />
+            <img
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-white.d216d864.webp"
+              alt=""
+            />
+          </span>
+
+          <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+          </span>
+        </div>
+
+        <ul
+          class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-black w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+        >
+          <li class="mx-4 my-6 md:my-0 p-2">
+            <a href="#" class="text-xl font-semibold text-white duration-500"
+              >Beranda</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 p-2">
+            <a href="#" class="text-xl font-semibold text-white duration-500"
+              >Program</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0 p-2">
+            <a href="#" class="text-xl font-semibold text-white duration-500"
+              >Butuh Bantuan?</a
+            >
+          </li>
+
+          <button
+            class="bg-white p-3 rounded-3xl text-black font-semibold duration-500 px-6 py-2 mx-4"
+          >
+            Masuk Ke Akun
+          </button>
+
+          <h2 class=""></h2>
+        </ul>
+      </nav> -->
+
+      <nav>
+        <div class="bg-black lg:px-20  ">
+          <div class="flex py-4 px-8 gap-2 justify-between">
+          
+            <!-- logo -->
+            <div class="flex my-auto ">
+              <img class="mr-2" src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-pendidikan.92aef756.webp" alt=""/>
+              <img src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-white.d216d864.webp" alt=""/>
+              
+            </div>
+            <!-- burger -->
+            <div class="md:hidden">
+            <span class="text-3xl cursor-pointer mx-2 block text-white">
+              <ion-icon name="menu" id="buka"></ion-icon>
+            </span>
+          </div>
+            
+            <!-- isi putih putih jelek -->
+            <div class="items-center gap-8 z-[-1] hidden md:flex md:z-auto ">
+              <span>
+                <a class="text-white font-bold" href="">Beranda</a>
+              </span>
+
+              <span>
+                <a class="text-white font-bold" href="">Program</a>
+              </span>
+
+              <span>
+                <a class="text-white font-bold" href="">Butuh Bantuan?</a>
+              </span>
+
+              <button class="bg-white font-medium flex  text-black rounded-full p-2">
+                <div class="flex items-center gap-2 p-1">
+                  <ion-icon name="person" class="text-gray-400"></ion-icon>
+                  <p>Masuk Ke Akun</p>
+                </div>
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- yang di bawah -->
+        <div class="fixed bottom-0 right-0 left-0 bg-white py-4 px-14 lg:hidden">
+          <ul class="flex gap-5 justify-between">
+            <li>
+              <button class="flex flex-col justify-center items-center gap-1" href="">
+                <ion-icon name="home"></ion-icon>
+                <span class="text-base font-bold">Home</span>
+              </button>
+            </li>
+            <li>
+              <button class="flex flex-col justify-center items-center gap-1" href="">
+                <ion-icon name="briefcase"></ion-icon>
+                <span class="text-base font-bold">Program</span>
+              </button>
+            </li>
+            <li>
+              <button class="flex flex-col justify-center items-center gap-1" href="">
+                <ion-icon name="help-circle-outline" class="text-xl"></ion-icon>
+                <span class="text-base font-bold">FAQ</span>
+              </button>
+            </li>
+
+            <li>
+              <a class="flex flex-col justify-center items-center gap-1" href="">
+                <ion-icon name="person"></ion-icon>
+                <span class="text-base font-bold">Masuk</span>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+
+    <!-- <div class="md:flex md:justify-center">
+      <div class="p-4 bg-white font-bold hover:text-blue-700 hover:bg-slate-100">
+        <a class="" href="">Kampus Mengajar </a>
+      </div>
+      <div class="p-4 bg-white font-bold">
+        <a href="">Magang MSIB </a>
+      </div>
+      <div class="p-4 bg-white font-bold">
+        <a href="">Studi Independen Bersertifikat </a>
+      </div>
+      <div class="p-4 bg-white font-bold">
+        <a href="">Pertukaran Mahasiswa Merdeka </a>
+      </div>
+      <div class="p-4 bg-white font-bold">
+        <a href="">Program dan Kegiatan Lainnya </a>
+      </div>
+    </div>
+
+    <div class="bg-red-400">halo</div> -->
+
+    <div name="progja" class="hidden lg:block justify-center bg-white">
+      <div class="flex justify-center ">
+        <!-- Kampus Mengajar -->
+        <div class="justify-between flex p-4 hover:bg-slate-100 hover:text-blue-600">
+          <a href="" class="font-bold my-auto whitespace-pre-line ">Kampus 
+            Mengajar</a>
+          <ion-icon class="my-auto p-px" name="chevron-down-outline"></ion-icon>
+        </div>
+        <!-- Magang MSIB -->
+        <div class="justify-between flex p-4 hover:bg-slate-100 hover:text-blue-600">
+          <a href="" class="font-bold my-auto whitespace-pre-line">Magang MSIB
+          </a>
+          <ion-icon class="my-auto p-px" name="chevron-down-outline"></ion-icon>
+        </div>
+        <!-- Stupen -->
+        <div class="justify-between flex p-4 hover:bg-slate-100 hover:text-blue-600">
+          <a href="" class="font-bold my-auto whitespace-pre-line">Studi Independen
+            Bersertifikat
+          </a>
+          <ion-icon class="my-auto p-px" name="chevron-down-outline"></ion-icon>
+        </div>
+        <!-- PMM -->
+        <div class="justify-between flex p-4 hover:bg-slate-100 hover:text-blue-600">
+          <a href="" class="font-bold my-auto whitespace-pre-line">Pertukaran Mahasiswa
+            Merdeka
+          </a>
+          <ion-icon class="my-auto p-px" name="chevron-down-outline"></ion-icon>
+        </div>
+        <!-- dll -->
+        <div class="justify-between flex p-4 hover:bg-slate-100 hover:text-blue-600">
+          <a href="" class="font-bold my-auto whitespace-pre-line">Program dan
+            Kegiatan Lainnya
+          </a>
+          <ion-icon class="my-auto p-px" name="chevron-down-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-center items-center w-full h-[600px] bg-cover bg-[url(https://kampusmerdeka.kemdikbud.go.id/static/media/headline-mahasiswa.7bfc0303.webp)]"
+    >
+      <div class="p-10">
+        <div class="px-7 pt-7 text-white">
+          <h1 class="font-bold text-7xl w-1/2">Ambil Kendali Masa Depanmu</h1>
+          <p class="mt-4 text-xl">
+            Kampus Merdeka adalah cara terbaik berkuliah. Dapatkan kemerdekaan
+            untuk membentuk masa depan yang sesuai dengan aspirasi kariermu
+          </p>
+        </div>
+
+        <div class="px-7">
+          <button
+            class="text-white bg-blue-600 rounded-2xl my-4 font-bold py-3 mr-4 md:w-[240px] mb-4 w-full"
+          >
+            Telusuri Program
+          </button>
+          <button
+            class="text-black bg-white rounded-2xl font-bold py-3 md:w-[240px] w-full"
+          >
+            Cek Persyaratan Umum
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-24 py-10 bg-gray-100">
+      <h1 class="font-bold text-4xl">Program dan Kegiatan Unggulan</h1>
+      <div class=" snap-center flex overflow-x-scroll no-scrollbar">
+        <!-- Card Kampus Mengajar -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl ">
+          <div class="">
+            <img
+              class=""
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/kampus-mengajar-logo.4cb4b8b5.webp"
+              alt=""
+            />
+            <p class="text-lg">
+              Bantu tingkatkan kualitas pengajaran pendidikan dasar melalui
+              <span class="font-bold">Kampus Mengajar</span>
+            </p>
+
+            <p class="text-lg font-thin my-4">
+              Pendaftaran: <br />
+              Telah ditutup pada 25 November 2023
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card MSIB -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class=""
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/msib-logo.8402a51e.webp"
+              alt=""
+            />
+            <p class="text-lg my-4">
+              Rasakan pengalaman dunia kerja dengan terjun langsung melalui
+              <span class="font-bold">Magang MSIB</span>
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Studi Independen  -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class=""
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/msib-logo.8402a51e.webp"
+              alt=""
+            />
+            <p class="text-lg my-4">
+              Riset kolaboratif bersama perusahaan ternama melalui
+              <span class="font-bold">Studi Independen</span>
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Magang Mandiri  -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class=""
+              src="data:image/png;base64,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"
+              alt=""
+            />
+            <p class="text-lg my-4">
+              Temukan pengalaman dunia kerja yang dikelola secara langsung oleh
+              perusahaan melalui
+              <span class="font-bold">Magang Mandiri!</span>
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card PMM  -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class=""
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/pmm-logo.02f2aceb.webp"
+              alt=""
+            />
+            <p class="text-lg">
+              Bertukar pengalaman budaya dengan universitas lain melalui
+              <span class="font-bold"> Pertukaran Mahasiswa</span>
+              dalam negeri!
+            </p>
+
+            <p class="text-lg font-thin my-4">
+              Pendaftaran: <br />
+              Telah ditutup pada 2 Mei 2023
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Wirausaha Merdeka  -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class="justify-center"
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/wmk-logo.8e10d0f7.webp"
+              alt=""
+            />
+            <p class="text-lg">
+              Ikuti program wirausaha dari perguruan tinggi lain melalui
+              <span class="font-bold"> Wirausaha Merdeka </span>
+            </p>
+
+            <p class="text-lg font-thin my-4">
+              Pendaftaran: <br />
+              Telah ditutup pada 20 April 2023
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <!-- Card IISMA  -->
+        <div class="mt-6 mr-4 min-w-72 h-62 bg-white px-4 py-6 content-center rounded-xl">
+          <div class="">
+            <img
+              class="justify-center"
+              src="https://kampusmerdeka.kemdikbud.go.id/static/media/iisma-logo-mobile@2x.6e2b3f47.webp"
+              alt=""
+            />
+            <p class="text-lg">
+              Perluas wawasan dan koneksi melalui
+              <span class="font-bold">
+                Pertukaran Mahasiswa secara Internasional
+              </span>
+            </p>
+
+            <button
+              class="border-solid border-2 border-black rounded-2xl p-2 px-5 items-center w-full font-bold"
+            >
+              Selengkapnya
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="justify-center items-center flex mt-8">
+        <button class=" text-white bg-black rounded-2xl font-bold py-3 w-[240px] md:w-[240px] sm:w-full">
+          Lihat Program Lainnya
+        </button>
+      </div>
+          
+  </div>
+  <footer class="p-20 bg-black text-white ">
+    <div class="grid grid-cols-3 gap-5 ">
+      <div class="justify-center items-start flex">
+        <img class="max-w-[100px] " src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-kemendikbud@2x.8229b760.webp" alt="">
+      </div>
+      <div class="p-2">
+        <p class="overflow-wrap break-words font-bold">
+        Direktorat Jenderal Pendidikan Tinggi, Riset, dan
+          Teknologi (Diktiristek)
+          
+          <p class="overflow-wrap break-words mt-4">marketing@kampusmerdeka.co</p>
+          <p class="overflow-wrap break-words mt-4">Jl. Jenderal Sudirman, Senayan, Jakarta 10270</>
+      </div>
+      <div>
+        <div>
+          <p class="font-bold text-lg">Navigasi</p>
+          <a href="">Beranda</a>
+          <br><a href="">Tentang Kami</a>
+          <br><a href="">Berita</a>
+          <br><a href="">Pengumuman</a>
+          <br><a href="">FAQ</a>
+          <br><a href="">Program</a>
+          <br><a href="">Daftar</a>
+        </p>
+  </footer>
+
+  <!-- hasil hamburger menu -->
+  <div id="menu" class="bg-opacity-50 bg-black fixed top-0 left-0 w-screen h-screen z-10 hidden  ">
+   
+    <div class="bg-white flex flex-col gap-4 px-5 pb-20">
+      
+      <!-- <button id="tutup" class="self-end me-4">X</button> -->
+      <ion-icon id="tutup" class="cursor-pointer self-end me-4 pt-4 text-2xl " name="close-outline"></ion-icon>
+      <p class="text-gray-400 text-sm">Program Kampus Merdeka</p>
+      <div class="font-bold flex justify-between">
+        <p>Kampus Mengajar</p>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </div>
+      <div class="font-bold flex justify-between">
+        <p>Magang MSIB</p>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </div>
+      <div class="font-bold flex justify-between">
+        <p>Studi Independen Bersertifikat</p>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </div>
+      <div class="font-bold flex justify-between">
+        <p>Pertukaran Mahasiswa Merdekat</p>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </div>
+      <div class="font-bold flex justify-between">
+        <p>Program dan Kegiatan Lainnya</p>
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const buka = document.querySelector('#buka');
+    const tutup = document.querySelector('#tutup');
+    const menu = document.querySelector('#menu');
+
+    buka.addEventListener('click', function(){
+      menu.classList.remove('hidden');
+    });
+
+    tutup.addEventListener('click', function(){
+      menu.classList.add('hidden');
+    })
+
+  </script>
+
+
+  </body>
+
+  <!-- alalala -->
+  <!-- <footer class="p-20 bg-black text-white">
+    <div class="flex justify-between">
+      <div class="flex flex-wrap items-start">
+        <img class="max-w-[100px]" src="https://kampusmerdeka.kemdikbud.go.id/static/media/logo-kemendikbud@2x.8229b760.webp" alt="">
+      </div>
+      
+      <div class="p-2 overflow-wrap break-words">
+        <p class="font-bold">Direktorat Jenderal Pendidikan Tinggi, Riset, dan Teknologi (Diktiristek)</p>
+        <p class="mt-4">marketing@kampusmerdeka.co</p>
+        <p class="mt-4">Jl. Jenderal Sudirman, Senayan, Jakarta 10270</p>
+      </div>
+      
+      <div class="p-2">
+        <p class="font-bold text-lg">Navigasi</p>
+        <a href="" class="block mt-2">Beranda</a>
+        <a href="" class="block">Tentang Kami</a>
+        <a href="" class="block">Berita</a>
+        <a href="" class="block">Pengumuman</a>
+        <a href="" class="block">FAQ</a>
+        <a href="" class="block">Program</a>
+        <a href="" class="block">Daftar</a>
+      </div>
+    </div>
+  </footer> -->
+  
+
+  
+</html>
