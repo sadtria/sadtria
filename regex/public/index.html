@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css">
+  </head>
+  <body class="bg-blue-950">
+
+    <div class="mx-auto max-w-xs p-4">
+      <div class="m-2 items-center flex justify-center text-xl">
+        <p class="font-bold text-blue-400">Form Regex</p>
+      </div>
+      <!-- nama huruf besar -->
+      <form action="/" method="post" class="mb-4 border bg-blue-400 border-blue-400 rounded-2xl p-4">
+        <p class="font-sans text-white">Name</p>
+        <input class="outline-none border-none rounded-md text-blue-400 p-2 w-full" type="text" name="input" id="inputText" />
+        <p id="pesan" class="text-white text-xs"></p>
+      </form>
+
+      <!-- email -->
+      <form id="form2" action="/" method="post" class="mb-4 border bg-blue-400 border-blue-400 rounded-2xl p-4">
+        <p class="font-sans text-white">Email</p>
+        <input type="text" name="input" id="inputText2" class="outline-none border-none rounded-md text-blue-400 p-2 w-full" />
+        <p id="pesan2" class="text-white text-xs"></p>
+      </form>
+
+      <!-- username -->
+      <form id="form3" action="/" method="post" class="mb-4 border bg-blue-400 border-blue-400 rounded-2xl p-4">
+        <p class="font-sans text-white">Username</p>
+        <input type="text" name="input" id="inputText3" class="outline-none border-none rounded-md text-blue-400 p-2 w-full" />
+        <p id="pesan3" class="text-white text-xs"></p>
+      </form>
+
+      <!-- phone number -->
+      <form id="form4" action="/" method="post" class="mb-4 border bg-blue-400 border-blue-400 rounded-2xl p-4">
+        <p class="font-sans text-white">Phone Number</p>
+        <input type="text" name="input" id="inputText4" class="outline-none border-none rounded-md text-blue-400 p-2 w-full" />
+        <p id="pesan4" class="text-white text-xs"></p>
+      </form>
+
+      <!-- PASSWORD -->
+      <form id="form5" action="/" method="post" class="mb-4 border bg-blue-400 border-blue-400 rounded-2xl p-4">
+        <p class="font-sans text-white">Password</p>
+        <input type="text" name="input" id="inputText5" class="outline-none border-none rounded-md text-blue-400 p-2 w-full" />
+        <p id="pesan5" class="text-white text-xs"></p>
+      </form>
+    </div>
+
+    <script>
+      var inputText = document.getElementById("inputText");
+      var pesan = document.getElementById("pesan");
+
+      inputText.addEventListener("input", function () {
+        var regexPattern = new RegExp("^[A-Z][a-zA-Z']*");
+        if (regexPattern.test(inputText.value)) {
+          pesan.innerHTML = "Valid";
+        } else {
+          pesan.innerHTML = "Use capital letters to start the name.";
+        }
+      });
+
+    //   
+      var inputText2 = document.getElementById("inputText2");
+      var pesan2 = document.getElementById("pesan2");
+
+      inputText2.addEventListener("input", function () {
+        var regexPattern = new RegExp(
+          "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        );
+        if (regexPattern.test(inputText2.value)) {
+          pesan2.innerHTML = "Valid";
+        } else {
+          pesan2.innerHTML = "Wrong email";
+        }
+      });
+
+    //   
+    var inputText3 = document.getElementById("inputText3");
+var pesan3 = document.getElementById("pesan3");
+
+inputText3.addEventListener("input", function () {
+    var regexPattern = new RegExp("^[a-zA-Z0-9]{4,20}$");
+    if (regexPattern.test(inputText3.value)) {
+        pesan3.innerHTML = "Valid";
+    } else {
+        pesan3.innerHTML = "Invalid username, 4-20 characters use letters and numbers only.";
+    }
+});
+
+
+      //
+      var inputText4 = document.getElementById("inputText4");
+      var pesan4 = document.getElementById("pesan4");
+
+      inputText4.addEventListener("input", function () {
+        var regexPattern = new RegExp(
+          "^\\+?[0-9\\s-]{8,15}$"
+        );
+        if (regexPattern.test(inputText4.value)) {
+          pesan4.innerHTML = "Valid";
+        } else {
+          pesan4.innerHTML = "Invalid phone number.";
+        }
+      });
+
+      //
+      var inputText5 = document.getElementById("inputText5");
+var pesan5 = document.getElementById("pesan5");
+
+inputText5.addEventListener("input", function () {
+    var regexPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (regexPattern.test(inputText5.value)) {
+        pesan5.innerHTML = "Strong password.";
+    } else {
+        var warningMessage = "Password must contain:";
+        if (inputText5.value.length < 8) {
+            warningMessage += "<br>- At least 8 characters";
+        }
+        if (!/(?=.*[a-z])/.test(inputText5.value)) {
+            warningMessage += "<br>- At least one lowercase letter";
+        }
+        if (!/(?=.*[A-Z])/.test(inputText5.value)) {
+            warningMessage += "<br>- At least one uppercase letter";
+        }
+        if (!/(?=.*\d)/.test(inputText5.value)) {
+            warningMessage += "<br>- At least one digit";
+        }
+        if (!/(?=.*[@$!%*?&])/.test(inputText5.value)) {
+            warningMessage += "<br>- At least one special character (@, $, !, %, *, ?, or &)";
+        }
+        pesan5.innerHTML = warningMessage;
+    }
+});
+
+
+
+
+    </script>
+  </body>
+</html>
